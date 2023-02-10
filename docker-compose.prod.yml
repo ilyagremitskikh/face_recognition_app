@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    restart: always
+    
+    image: mindxaker/faceapp:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./data:/app/data/
+    environment:
+      - DATA_FOLDER_PATH=${DATA_FOLDER_PATH}
+      - SECRET_API_KEY=${SECRET_API_KEY}
